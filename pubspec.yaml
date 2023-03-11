@@ -1,0 +1,82 @@
+name: jrpn15_build
+description: Jovial RPN 15C Beta, a calculator simulator inspired by the HP-15C Scientific Calculator
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 2.1.0+10    # See also lib/generic_main.dart
+
+environment:
+  sdk: '>=2.17.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  jrpn:
+      git:
+        url: https://github.com/zathras/jrpn.git
+        path: shared
+        ref: main
+  jrpn15:
+      git:
+        url: https://github.com/zathras/jrpn.git
+        path: jrpn15
+        ref: main
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.12.0
+  flutter_lints: ^2.0.1
+  flutter_test:
+    sdk: flutter
+  test: ^1.16.5
+  msix: ^3.7.0
+
+flutter_icons:
+  image_path: assets_16/icon256.png
+  image_path_ios:  assets_16/icon_ios.png
+  android:
+    generate: true
+  macos:
+    generate: true
+  linux:
+    generate: true
+  windows:
+    generate: true
+  ios:
+    generate: true
+  # If changed, "flutter pub run flutter_launcher_icons:main"
+  # See https://pub.dev/packages/flutter_launcher_icons
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: KeyLabelFont
+      fonts:
+          - asset: packages/jrpn/fonts/deja_vu_sans.ttf
+            style: normal
+            weight: 400
+          - asset: packages/jrpn/fonts/deja_vu_sans_bold.ttf
+            style: normal
+            weight: 700
+    - family: LogoFont
+      fonts:
+        - asset: packages/jrpn/fonts/WorkSans-Regular.ttf
+          style: normal
+          weight: 400
+        - asset: packages/jrpn/fonts/WorkSans-Medium.ttf
+          style: normal
+          weight: 500
+    - family: LiberationMono
+      fonts:
+        - asset: packages/jrpn/fonts/LiberationMono.ttf
+          style: normal
+          weight: 400
+
+# "flutter pub run msix:create"
+msix_config:
+  display_name: JRPN 16C
+  publisher_display_name: Jovial Software
+  identity_name: com.jovial.jrpn
+  msix_version: 1.0.0.0
+  file-extension: .16c, .j16c
+  execution_alias: jrpn16
+  store: false
