@@ -31,14 +31,14 @@ dev_dependencies:
   msix: ^3.7.0
 
 flutter_icons:
-  image_path: assets_16/icon256.png
-  image_path_ios:  assets_16/icon_ios.png
+  image_path: assets_15/icon256.png
+  image_path_ios:  assets_15/icon_ios.png
   android:
-    generate: true
+    generate: false
   macos:
     generate: true
   linux:
-    generate: true
+    generate: false
   windows:
     generate: true
   ios:
@@ -73,10 +73,10 @@ flutter:
 
 # "flutter pub run msix:create"
 msix_config:
-  display_name: JRPN 16C
+  display_name: JRPN 15C
   publisher_display_name: Jovial Software
-  identity_name: com.jovial.jrpn
+  identity_name: com.jovial.jrpn15
   msix_version: 1.0.0.0
-  file-extension: .16c, .j16c
+  file-extension: .15c, .j15c
   execution_alias: jrpn16
   store: false
