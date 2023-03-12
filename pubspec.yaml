@@ -81,4 +81,3 @@ msix_config:
   msix_version: 1.0.0.0
   file-extension: .15c, .j15c
   execution_alias: jrpn16
-  store: false
