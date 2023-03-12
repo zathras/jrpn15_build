@@ -1,6 +1,6 @@
-# jrpn16
+# jrpn15
 
-This is a skeletal repo for building the jrpn16 variant of JRPN.
+This is a skeletal repo for building the jrpn15 variant of JRPN.
 Notably, it was created because Linux's "snapcraft" really wants 
 the default directory structure.
 
