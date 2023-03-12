@@ -333,7 +333,7 @@ packages:
     description:
       path: shared
       ref: main
-      resolved-ref: "9c6148792d4cfbf429a37eac20d569348e7ea4b0"
+      resolved-ref: "05c68d29d57b5eec280896ff85a06a3e2c60a9cc"
       url: "https://github.com/zathras/jrpn.git"
     source: git
     version: "2.0.1+6"
@@ -342,7 +342,7 @@ packages:
     description:
       path: jrpn15
       ref: main
-      resolved-ref: "9c6148792d4cfbf429a37eac20d569348e7ea4b0"
+      resolved-ref: "05c68d29d57b5eec280896ff85a06a3e2c60a9cc"
       url: "https://github.com/zathras/jrpn.git"
     source: git
     version: "2.1.0+10"
