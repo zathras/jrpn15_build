@@ -80,4 +80,4 @@ msix_config:
   publisher: CN=8C283FE0-3A16-4021-946B-3EF54C23339D
   msix_version: 1.0.0.0
   file-extension: .15c, .j15c
-  execution_alias: jrpn16
+  execution_alias: jrpn15
