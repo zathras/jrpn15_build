@@ -31,10 +31,6 @@ apps:
         extensions: [flutter-master]
         plugs:
         - home
-        - desktop
-        - desktop-legacy
-        - wayland
-        - unity7
         slots:
         - dbus-jrpn15
 
