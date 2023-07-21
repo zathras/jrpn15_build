@@ -1,6 +1,6 @@
 name: jrpn15
 base: core18
-version: '2.1.4'
+version: '2.1.6'
 summary: Calculator simulator inspired by the HP-15C Scientific Calculator
 description: |
   Calculator simulator inspired by the HP-15C scientific calculator.

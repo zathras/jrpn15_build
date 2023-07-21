@@ -3,10 +3,10 @@ description: Jovial RPN 15C, a calculator simulator inspired by the HP-15C Scien
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 2.1.4+14    # See also lib/generic_main.dart
+version: 2.1.6+16    # See also lib/generic_main.dart
 
 environment:
-  sdk: '>=2.17.0 <3.0.0'
+  sdk: '>=3.0.6 <4.0.0'
 
 dependencies:
   flutter:
@@ -76,7 +76,7 @@ msix_config:
   publisher_display_name: Jovial Software
   identity_name: 15297JovialSoftware.jrpn15
   publisher: CN=8C283FE0-3A16-4021-946B-3EF54C23339D
-  msix_version: 2.1.4.0
+  msix_version: 2.1.6.0
   logo_path: assets_15/windows_icon.png
   file-extension: .15c, .j15c
   execution_alias: jrpn15
