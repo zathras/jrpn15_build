@@ -18,12 +18,12 @@ dependencies:
         ref: main
 
 dev_dependencies:
-  flutter_launcher_icons: ^0.12.0
+  flutter_launcher_icons: ^0.13.0
   flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
   test: ^1.16.5
-  msix: ^3.7.0
+  msix: ^3.16.0
 
 flutter_icons:
   image_path: assets_15/icon256.png
@@ -71,6 +71,7 @@ flutter:
 
 # "flutter pub run msix:create"
 msix_config:
+  architecture: x64
   store: true
   display_name: JRPN 15C
   publisher_display_name: Jovial Software
