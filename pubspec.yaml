@@ -81,3 +81,4 @@ msix_config:
   logo_path: assets_15/windows_icon.png
   file-extension: .15c, .j15c
   execution_alias: jrpn15
+
