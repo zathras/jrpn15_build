@@ -69,6 +69,7 @@ flutter:
           style: normal
           weight: 400
 
+
 # "flutter pub run msix:create"
 msix_config:
   architecture: x64
