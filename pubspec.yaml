@@ -77,7 +77,7 @@ msix_config:
   publisher_display_name: Jovial Software
   identity_name: 15297JovialSoftware.jrpn15
   publisher: CN=8C283FE0-3A16-4021-946B-3EF54C23339D
-  msix_version: 2.1.8.0
+  msix_version: 2.1.9.0
   logo_path: assets_15/windows_icon.png
   file-extension: .15c, .j15c
   execution_alias: jrpn15
