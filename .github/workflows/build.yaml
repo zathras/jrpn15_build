@@ -1,0 +1,87 @@
+
+# See https://github.com/subosito/flutter-action
+
+name:  JRPN15 Build
+run-name: ${{ github.actor }} JRPN15 Build
+on: 
+    workflow_dispatch:          # Manually
+
+    # push:
+    #     branches: [master]
+    #     paths-ignore:
+    #         - '**/README.md'
+
+jobs:
+    macos-build:
+        runs-on: macos-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: subosito/flutter-action@v2
+              with:
+                  channel: 'stable'
+                  architecture: x64
+                  # flutter:version: '3.0.0'
+            - run: flutter pub get
+            - run: flutter config --enable-macos-desktop
+            - run: flutter build macos
+            - run: cd build/macos/Build/Products/Release/ ; zip -r jrpn15_macos.app.zip "JRPN 15c.app"
+            - uses: actions/upload-artifact@v3
+              with:
+                name:  jrpn15_macos
+                path:  build/macos/Build/Products/Release/jrpn15_macos.app.zip
+            - run: flutter build ios --release --no-codesign
+            - run: cd build/ios/Release-iphoneos ; zip -r jrpn15_ios.app.zip Runner.app
+            - uses: actions/upload-artifact@v3
+              with:
+                name:  jrpn15_ios
+                path:  build/ios/Release-iphoneos/jrpn15_ios.app.zip
+
+    apk-and-linux-build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-java@v4
+              with:
+                distribution: 'zulu'
+                java-version: '11'
+            - uses: subosito/flutter-action@v2
+              with:
+                  channel: 'stable'
+                  # flutter:version: '3.0.0'
+            - run: flutter pub get
+            - run: flutter build apk
+            - run: mv build/app/outputs/apk/release/app-release.apk build/app/outputs/apk/release/jrpn15_android_app-release.apk
+            - uses: actions/upload-artifact@v3
+              with:
+                name:  jrpn15_android_apk
+                path:  build/app/outputs/apk/release/jrpn15_android_app-release.apk
+            - run: |
+                sudo apt-get update -y
+                sudo apt-get install -y ninja-build libgtk-3-dev
+            - run: flutter config --enable-linux-desktop
+            - run: flutter build linux
+            - run: |
+                cd build/linux/x64/release
+                mv bundle jrpn15
+                zip -r jrpn15_linux.zip jrpn15
+            - uses: actions/upload-artifact@v3
+              with:
+                name:  jrpn15_linux_bundle
+                path:  build/linux/x64/release/jrpn15_linux.zip
+
+    msix-build:
+        runs-on: windows-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: subosito/flutter-action@v2
+              with:
+                  channel: 'stable'
+                  # flutter:version: '3.0.0'
+            - run: flutter config --enable-windows-desktop
+            - run: flutter build windows
+            - run: dart run msix:create
+            - run: mv build/windows/x64/runner/Release/jrpn15_build.msix build/windows/x64/runner/Release/jrpn15_windows_build.msix
+            - uses: actions/upload-artifact@v3
+              with:
+                name:  jrpn15_windows_build
+                path:  build/windows/x64/runner/Release/jrpn15_windows_build.msix
