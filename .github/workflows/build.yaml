@@ -30,11 +30,11 @@ jobs:
                 name:  jrpn15_macos
                 path:  build/macos/Build/Products/Release/jrpn15_macos.app.zip
             - run: flutter build ios --release --no-codesign
-            - run: cd build/ios/Release-iphoneos ; zip -r --symlinks jrpn15_ios.app.zip Runner.app
+            - run: cd build/ios/iphoneos ; zip -r --symlinks jrpn15_ios.app.zip Runner.app
             - uses: actions/upload-artifact@v3
               with:
                 name:  jrpn15_ios
-                path:  build/ios/Release-iphoneos/jrpn15_ios.app.zip
+                path:  build/ios/iphoneos/jrpn15_ios.app.zip
 
     apk-and-linux-build:
         runs-on: ubuntu-latest
