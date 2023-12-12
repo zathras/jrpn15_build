@@ -23,6 +23,7 @@ jobs:
                   # flutter:version: '3.0.0'
             - run: flutter pub get
             - run: flutter config --enable-macos-desktop
+            - run: flutter config --enable-ios
             - run: flutter build macos --release
             - run: cd build/macos/Build/Products/Release/ ; zip --symlinks -r jrpn15_macos.app.zip "JRPN 15c.app"
             - uses: actions/upload-artifact@v3
