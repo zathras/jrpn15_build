@@ -24,13 +24,13 @@ jobs:
             - run: flutter pub get
             - run: flutter config --enable-macos-desktop
             - run: flutter build macos
-            - run: cd build/macos/Build/Products/Release/ ; zip -r jrpn15_macos.app.zip "JRPN 15c.app"
+            - run: cd build/macos/Build/Products/Release/ ; zip --symlinks -r jrpn15_macos.app.zip "JRPN 15c.app"
             - uses: actions/upload-artifact@v3
               with:
                 name:  jrpn15_macos
                 path:  build/macos/Build/Products/Release/jrpn15_macos.app.zip
             - run: flutter build ios --release --no-codesign
-            - run: cd build/ios/Release-iphoneos ; zip -r jrpn15_ios.app.zip Runner.app
+            - run: cd build/ios/Release-iphoneos ; zip -r --symlinks jrpn15_ios.app.zip Runner.app
             - uses: actions/upload-artifact@v3
               with:
                 name:  jrpn15_ios
@@ -63,7 +63,7 @@ jobs:
             - run: |
                 cd build/linux/x64/release
                 mv bundle jrpn15
-                zip -r jrpn15_linux.zip jrpn15
+                zip -r --symlinks jrpn15_linux.zip jrpn15
             - uses: actions/upload-artifact@v3
               with:
                 name:  jrpn15_linux_bundle
