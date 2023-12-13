@@ -1,0 +1,26 @@
+
+# See https://github.com/subosito/flutter-action
+
+name:  Foo
+run-name: ${{ github.actor }} Foo
+on: 
+    workflow_dispatch:          # Manually
+
+jobs:
+    macos-build:
+        runs-on: macos-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: subosito/flutter-action@v2
+              with:
+                  channel: 'stable'
+                  architecture: x64
+                  # flutter:version: '3.0.0'
+            - run: flutter pub get
+            - run: flutter config --enable-ios
+            - run: flutter build ios --release --no-codesign --obfuscate --split-debug-info=debug-info
+            - run: cd build/ios/iphoneos ; zip -r --symlinks jrpn15_ios.app.zip Runner.app
+            - uses: actions/upload-artifact@v3
+              with:
+                name:  jrpn15_ios
+                path:  build/ios/iphoneos/jrpn15_ios.app.zip
