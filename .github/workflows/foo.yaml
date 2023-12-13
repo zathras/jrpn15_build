@@ -18,7 +18,7 @@ jobs:
                   # flutter:version: '3.0.0'
             - run: flutter pub get
             - run: flutter config --enable-ios
-            - run: flutter build ios --release --no-codesign --obfuscate --split-debug-info=debug-info
+            - run: flutter build ios --release --no-codesign --split-debug-info=debug-info
             - run: cd build/ios/iphoneos ; zip -r --symlinks jrpn15_ios.app.zip Runner.app
             - uses: actions/upload-artifact@v3
               with:
