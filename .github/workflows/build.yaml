@@ -19,7 +19,7 @@ jobs:
             - uses: subosito/flutter-action@v2
               with:
                   channel: 'stable'
-                  architecture: arm
+                  architecture: arm64
                   # flutter:version: '3.0.0'
             - run: flutter pub get
             - run: flutter config --enable-macos-desktop
