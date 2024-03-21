@@ -26,7 +26,7 @@ jobs:
             - run: flutter config --enable-ios
             - run: flutter build macos --release
             - run: cd build/macos/Build/Products/Release/ ; zip --symlinks -r jrpn15_macos.app.zip "JRPN 15c.app"
-            - uses: actions/upload-artifact@v3
+            - uses: actions/upload-artifact@v4
               with:
                 name:  jrpn15_macos
                 path:  build/macos/Build/Products/Release/jrpn15_macos.app.zip
@@ -40,7 +40,7 @@ jobs:
                   lipo -remove armv7 -remove armv7s -remove arm64e $f -o $f
                 done
                 zip -r --symlinks jrpn15_ios.app.zip Runner.app
-            - uses: actions/upload-artifact@v3
+            - uses: actions/upload-artifact@v4
               with:
                 name:  jrpn15_ios
                 path:  build/ios/iphoneos/jrpn15_ios.app.zip
@@ -67,7 +67,7 @@ jobs:
                 cd build/linux/x64/release
                 mv bundle jrpn15
                 zip -r --symlinks jrpn15_linux.zip jrpn15
-            - uses: actions/upload-artifact@v3
+            - uses: actions/upload-artifact@v4
               with:
                 name:  jrpn15_linux_bundle
                 path:  build/linux/x64/release/jrpn15_linux.zip
@@ -84,7 +84,7 @@ jobs:
             - run: flutter build windows
             - run: dart run msix:create
             - run: mv build/windows/x64/runner/Release/jrpn15_build.msix build/windows/x64/runner/Release/jrpn15_windows_build.msix
-            - uses: actions/upload-artifact@v3
+            - uses: actions/upload-artifact@v4
               with:
                 name:  jrpn15_windows_build
                 path:  build/windows/x64/runner/Release/jrpn15_windows_build.msix
