@@ -350,7 +350,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: ce5edc38da5c8d2004cc0a1c9f40c1944e41f514
+      resolved-ref: f7d97351ca4cfd148ca5d17a3c734b3d72c9b825
       url: "https://github.com/zathras/jrpn.git"
     source: git
     version: "2.1.12+25"
