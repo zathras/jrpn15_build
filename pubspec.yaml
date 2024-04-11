@@ -33,12 +33,12 @@ flutter_icons:
   android:
     generate: false
   macos:
-    generate: true
+    generate: false
     image_path: assets_15/macos_icon.png
   linux:
-    generate: true
+    generate: false
   windows:
-    generate: true
+    generate: false
   ios:
     generate: true
   # If changed, "flutter pub run flutter_launcher_icons:main"
