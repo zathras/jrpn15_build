@@ -36,9 +36,10 @@ jobs:
                 cd build/ios/iphoneos
                 # Strip out unused architectures.  See
                 # https://stackoverflow.com/questions/77657383/flutter-ios-build-contains-unneeded-architectures-in-libswiftxxx-dylib-causing-b
-                for f in `find Runner.app -name '*.dylib' -print` ; do
-                  lipo -remove armv7 -remove armv7s -remove arm64e $f -o $f
-                done
+                # This stopped being necessary in April 2024
+                # for f in `find Runner.app -name '*.dylib' -print` ; do
+                #   lipo -remove armv7 -remove armv7s -remove arm64e $f -o $f
+                # done
                 zip -r --symlinks jrpn15_ios.app.zip Runner.app
             - uses: actions/upload-artifact@v4
               with:
