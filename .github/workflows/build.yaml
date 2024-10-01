@@ -90,7 +90,7 @@ jobs:
                 name:  jrpn15_windows_build
                 path:  build/windows/x64/runner/Release/jrpn15_windows_build.msix
             - run: rm build/windows/x64/runner/Release/jrpn15_windows_build.msix
-            - run mv build/windows/x64/runner/Release build/windows/x64/runner/jrpn15_Release
+            - run: mv build/windows/x64/runner/Release build/windows/x64/runner/jrpn15_Release
             - uses: actions/upload-artifact@v4
               with:
                 name:  jrpn15_windows_release_dir
