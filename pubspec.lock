@@ -407,10 +407,10 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: bce956f49605aefd70b7daeaf5e387a0e1d35523
+      resolved-ref: f554ceb632b94522c1addba3936c64257d2f3201
       url: "https://github.com/zathras/jrpn.git"
     source: git
-    version: "2.1.18+33"
+    version: "2.1.18+34"
   js:
     dependency: transitive
     description:
