@@ -6,6 +6,7 @@ description: |
   Written in Flutter, so UI scales to any screen size, and the same
   code is used for versions for Android, MacOS and Windows.
   store.
+confinement: strict
 base: core22
 grade: stable
 license: GPL-3.0+
