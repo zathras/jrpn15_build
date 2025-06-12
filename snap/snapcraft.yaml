@@ -7,17 +7,18 @@ description: |
   code is used for versions for Android, MacOS and Windows.
   store.
 confinement: strict
+
+# Becomes "platforms" in core24
+#    build-for: [amd64]
+#    build-for: [arm64]
+architectures:
+  - build-on: [amd64]
+  - build-on: [arm64]
+
 base: core22
 grade: stable
 license: GPL-3.0+
 
-# Becomes "platforms" in core24
-architectures:
-  - build-on: [amd64]
-    build-for: [amd64]
-  - build-on: [arm64]
-    build-for: [arm64]
-#
 slots:
     dbus-jrpn15:
         interface: dbus
