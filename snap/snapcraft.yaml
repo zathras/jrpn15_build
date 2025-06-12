@@ -1,25 +1,17 @@
 name: jrpn15
-version: '2.1.17'
+version: '2.1.18'
 summary: Calculator simulator inspired by the HP-15C Scientific Calculator
 description: |
   Calculator simulator inspired by the HP-15C scientific calculator.
   Written in Flutter, so UI scales to any screen size, and the same
   code is used for versions for Android, MacOS and Windows.
   store.
-confinement: strict
 
-# Becomes "platforms" in core24
-# architectures:
-#   - build-on: [ arm64 ]
-#     build-for: [ arm64 ]
-#   - build-on: [ amd64 ]
-#     build-for: [ amd64 ]
-#
+confinement: strict
 
 platforms:
   amd64:
   arm64:
-
 
 base: core24
 grade: stable
