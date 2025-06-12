@@ -8,12 +8,19 @@ description: |
   store.
 confinement: strict
 
+
+
+
+
+
+
+
 # Becomes "platforms" in core24
 architectures:
-  - build-on: [ amd64 ]
-    build-for: [ amd64 ]
   - build-on: [ arm64 ]
     build-for: [ arm64 ]
+  - build-on: [ amd64 ]
+    build-for: [ amd64 ]
 
 base: core22
 grade: stable
