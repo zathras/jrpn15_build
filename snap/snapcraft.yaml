@@ -1,5 +1,5 @@
 name: jrpn15
-base: core22
+base: core24
 version: '2.1.17'
 summary: Calculator simulator inspired by the HP-15C Scientific Calculator
 description: |
@@ -8,7 +8,6 @@ description: |
   code is used for versions for Android, MacOS and Windows.
   store.
 
-grade: stable # must be 'stable' to release into candidate/stable channels
 
 architectures: 
   - build-on: amd64 
