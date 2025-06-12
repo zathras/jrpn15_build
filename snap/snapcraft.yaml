@@ -8,21 +8,20 @@ description: |
   store.
 confinement: strict
 
-
-
-
-
-
-
-
 # Becomes "platforms" in core24
-architectures:
-  - build-on: [ arm64 ]
-    build-for: [ arm64 ]
-  - build-on: [ amd64 ]
-    build-for: [ amd64 ]
+# architectures:
+#   - build-on: [ arm64 ]
+#     build-for: [ arm64 ]
+#   - build-on: [ amd64 ]
+#     build-for: [ amd64 ]
+#
 
-base: core22
+platforms:
+  amd64:
+  arm64:
+
+
+base: core24
 grade: stable
 license: GPL-3.0+
 
