@@ -1,6 +1,4 @@
 name: jrpn15
-base: core24
-grade: stable
 version: '2.1.17'
 summary: Calculator simulator inspired by the HP-15C Scientific Calculator
 description: |
@@ -8,33 +6,23 @@ description: |
   Written in Flutter, so UI scales to any screen size, and the same
   code is used for versions for Android, MacOS and Windows.
   store.
+base: core22
+grade: stable
+license: GPL-3.0+
 
-platforms: 
+architectures: 
   - build-on: amd64 
+    build-for: amd64
   - build-on: arm64
-
-slots:
-    dbus-jrpn15:
-        interface: dbus
-        bus: session
-        name: com.jovial.jrpn15
-
-confinement: strict
-
-build-packages:
-    - dirmngr
-
-apps:
-    jrpn15:
-        command: jrpn15
-        extensions: [gnome]
-        plugs:
-        - home
-        slots:
-        - dbus-jrpn15
+    buld-for: arm64
 
 parts:
     jrpn15:
         plugin: flutter
         source: .
         flutter-target: lib/main.dart
+
+apps:
+    jrpn15:
+        command: jrpn15
+        extensions: [gnome]
