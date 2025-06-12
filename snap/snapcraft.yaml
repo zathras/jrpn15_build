@@ -9,8 +9,7 @@ description: |
   code is used for versions for Android, MacOS and Windows.
   store.
 
-
-architectures: 
+platforms: 
   - build-on: amd64 
   - build-on: arm64
 
