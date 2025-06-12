@@ -1,5 +1,6 @@
 name: jrpn15
 base: core24
+grade: stable
 version: '2.1.17'
 summary: Calculator simulator inspired by the HP-15C Scientific Calculator
 description: |
@@ -27,7 +28,7 @@ build-packages:
 apps:
     jrpn15:
         command: jrpn15
-        extensions: [flutter-master]
+        extensions: [gnome]
         plugs:
         - home
         slots:
